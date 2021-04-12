@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -9,16 +9,24 @@ package net.javaguides.springboot;
  *
  * @author jgabrantes
  */
-public class Vector {
-    private String callSign, origininCountry;
-    private double latitude, longitude, originCountry;
+public class Airplane {
+    private String callSign, originCountry;
+    private double latitude, longitude;
+    private float velocidade;
 
-    public Vector() {
+    public float getVelocidade() {
+        return velocidade;
     }
 
-    public Vector(String callSign, String origininCountry, double latitude, double longitude, double originCountry) {
+    public void setVelocidade(float velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public Airplane() {
+    }
+
+    public Airplane(String callSign, double latitude, double longitude, String originCountry, float velocidade) {
         this.callSign = callSign;
-        this.origininCountry = origininCountry;
         this.latitude = latitude;
         this.longitude = longitude;
         this.originCountry = originCountry;
@@ -30,14 +38,6 @@ public class Vector {
 
     public void setCallSign(String callSign) {
         this.callSign = callSign;
-    }
-
-    public String getOrigininCountry() {
-        return origininCountry;
-    }
-
-    public void setOrigininCountry(String origininCountry) {
-        this.origininCountry = origininCountry;
     }
 
     public double getLatitude() {
@@ -56,11 +56,11 @@ public class Vector {
         this.longitude = longitude;
     }
 
-    public double getOriginCountry() {
+    public String getOriginCountry() {
         return originCountry;
     }
 
-    public void setOriginCountry(double originCountry) {
+    public void setOriginCountry(String originCountry) {
         this.originCountry = originCountry;
     }
     

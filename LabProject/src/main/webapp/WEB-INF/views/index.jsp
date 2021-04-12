@@ -6,23 +6,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>PtSkies</title>
+<title>IberianSkies</title>
 </head>
 <body>
-	<h1>Planes over ${country}</h1>
-        
+    
+	<h1>Planes over Iberian Peninsula </h1>
+        <h1>${counter}</h1>
+        <h1>${countery}</h1>}
         <table>
             <tr>
                 <th>Call Sign</th>
                 <th>Latitude</th>
                 <th>Longitude</th>
+                <th>Velocidade</th>
                 <th>Origin Country</th>
             </tr>
+            
+            
             <c:forEach items="${vectors}" var="vector">
                 <tr>
                     <td><c:out value="${vector.callSign}"/></td>
                     <td><c:out value="${vector.latitude}"/></td>
                     <td><c:out value="${vector.longitude}"/></td>
+                       <td><c:out value="${vector.velocidade}"/></td>
                     <td><c:out value="${vector.originCountry}"/></td>
                 </tr>
             </c:forEach>

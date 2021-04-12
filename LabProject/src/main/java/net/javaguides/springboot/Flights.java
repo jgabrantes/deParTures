@@ -13,11 +13,11 @@ import java.util.ArrayList;
  * @author jgabrantes
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AllVectors {
+public class Flights {
     private int time;
     private String[][] states;
     
-    public AllVectors() {}
+    public Flights() {}
     
     public int getTime(){
         return time;
@@ -35,20 +35,21 @@ public class AllVectors {
         this.states = states;
     }
     
-    public Vector getVector(int pos){
+    public Airplane getVector(int pos){
         if(states.length <= pos) return null;
-        Vector vector;
-        vector = new Vector(states[pos][1],states[pos][2], Double.parseDouble(states[pos][6]), Double.parseDouble(states[pos][5]), Double.parseDouble(states[pos][9]) );
+        Airplane vector;
+        vector = new Airplane(states[pos][1], Double.parseDouble(states[pos][6]),
+                Double.parseDouble(states[pos][5]), states[pos][2], Float.parseFloat(states[pos][9]));
         return vector;
     }
     
-    public ArrayList<Vector> getVectors() {
-        ArrayList<Vector> vectors = new ArrayList<>();
+    public ArrayList<Airplane> getFlights() {
+        ArrayList<Airplane> vectors = new ArrayList<>();
 
         for(int i=0; i<states.length; i++){
-            vectors.add(new Vector(states[i][1],states[i][2], Double.parseDouble(states[i][6]), Double.parseDouble(states[i][5]), Double.parseDouble(states[i][9])));
+            vectors.add(new Airplane(states[i][1], Double.parseDouble(states[i][6]),
+                    Double.parseDouble(states[i][5]),states[i][2], Float.parseFloat(states[i][9])));
         }
-        
         return vectors;
     }
 }
