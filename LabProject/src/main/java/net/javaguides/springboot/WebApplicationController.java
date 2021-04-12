@@ -40,7 +40,7 @@ public class WebApplicationController {
         }
         @GetMapping("/")
 	public String AppController(Model model) {            
-        //    model.addAttribute(list.toString(), tmp);
+            model.addAttribute("flights", tmp);
             return "index";
 	}      
         

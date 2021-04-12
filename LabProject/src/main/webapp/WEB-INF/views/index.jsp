@@ -23,7 +23,7 @@
             </tr>
             
             
-            <c:forEach items="${vectors}" var="vector">
+            <c:forEach items="${flights}" var="vector">
                 <tr>
                     <td><c:out value="${vector.callSign}"/></td>
                     <td><c:out value="${vector.latitude}"/></td>
