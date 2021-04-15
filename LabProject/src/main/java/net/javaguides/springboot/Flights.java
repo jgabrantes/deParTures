@@ -38,7 +38,7 @@ public class Flights {
     public Airplane getVector(int pos){
         if(states.length <= pos) return null;
         Airplane vector;
-        vector = new Airplane(states[pos][1], Double.parseDouble(states[pos][6]),
+        vector = new Airplane(states[pos][0], states[pos][1], Double.parseDouble(states[pos][6]),
                 Double.parseDouble(states[pos][5]), states[pos][2], Float.parseFloat(states[pos][9]));
         return vector;
     }
@@ -47,7 +47,7 @@ public class Flights {
         ArrayList<Airplane> vectors = new ArrayList<>();
 
         for(int i=0; i<states.length; i++){
-            vectors.add(new Airplane(states[i][1], Double.parseDouble(states[i][6]),
+            vectors.add(new Airplane(states[i][0], states[i][1], Double.parseDouble(states[i][6]),
                     Double.parseDouble(states[i][5]),states[i][2], Float.parseFloat(states[i][9])));
         }
         return vectors;

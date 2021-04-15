@@ -5,32 +5,59 @@
  */
 package net.javaguides.springboot;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
 /**
  *
  * @author jgabrantes
  */
-public class Airplane {
-    private String callSign, originCountry;
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Airplane implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+     
+    
+    private String icao24, callSign;
+    private String originCountry;
     private double latitude, longitude;
     private float velocidade;
-
-    public float getVelocidade() {
-        return velocidade;
-    }
-
-    public void setVelocidade(float velocidade) {
-        this.velocidade = velocidade;
-    }
-
+    
     public Airplane() {
     }
 
-    public Airplane(String callSign, double latitude, double longitude, String originCountry, float velocidade) {
+    public Airplane(String icao24, String callSign, double latitude, double longitude, String originCountry, float velocidade) {
+        this.icao24 = icao24;
         this.callSign = callSign;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.originCountry = originCountry;
+        this.originCountry = originCountry;        
     }
+    
+    
+    public Integer getId() {
+       return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getIcao24() {
+        return icao24;
+    }
+
+    public void setIcao24(String icao24) {
+        this.icao24 = icao24;
+    }
+    
 
     public String getCallSign() {
         return callSign;
@@ -62,6 +89,13 @@ public class Airplane {
 
     public void setOriginCountry(String originCountry) {
         this.originCountry = originCountry;
+    }
+        public float getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(float velocidade) {
+        this.velocidade = velocidade;
     }
     
         
