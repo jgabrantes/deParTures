@@ -18,17 +18,13 @@
                 <th>Call Sign</th>
                 <th>Latitude</th>
                 <th>Longitude</th>
-                <th>Velocidade</th>
                 <th>Origin Country</th>
-            </tr>
-            
-            
+            </tr>            
             <c:forEach items="${flights}" var="vector">
                 <tr>
                     <td><c:out value="${vector.callSign}"/></td>
                     <td><c:out value="${vector.latitude}"/></td>
                     <td><c:out value="${vector.longitude}"/></td>
-                       <td><c:out value="${vector.velocidade}"/></td>
                     <td><c:out value="${vector.originCountry}"/></td>
                 </tr>
             </c:forEach>

@@ -31,7 +31,7 @@ public class WebApplicationController {
         private AirplaneRepository airplaneRepo;
                 
         private static final Logger log = LoggerFactory.getLogger(WebApplicationController.class);
-        private static String uri = "https://opensky-network.org/api/states/all?lamin=45.8389&lomin=5.9962&lamax=47.8229&lomax=10.5226";
+        private static String uri ="https://opensky-network.org/api/states/all?lamin=37.002553&lomin=-8.767090&lamax=42.163403&lomax=3.120117";
         
         public static List<Airplane> tmp = new ArrayList<Airplane>();  
       
